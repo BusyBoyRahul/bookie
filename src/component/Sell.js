@@ -35,7 +35,7 @@ export default function Sell() {
       
       const selled = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/products",{
+        axios.post("https://bokiedb.onrender.com/products",{
         "name" : name,
         "description" : description,
         "image" : img,

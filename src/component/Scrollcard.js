@@ -29,7 +29,7 @@ export default function Scrollcard(props) {
 
     const [data, setData] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:8000/products`).then((postdata) => {
+        axios.get(`https://bokiedb.onrender.com/products`).then((postdata) => {
       const reversedData = postdata.data;
       
       setData(reversedData.filter(item => item.catogery.includes(props.filter)));

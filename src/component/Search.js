@@ -12,7 +12,7 @@ export default function Search() {
 
 
     useEffect(() => {
-      axios.get(`http://localhost:8000/products/?name_like=${search}`).then((postdata) => {
+      axios.get(`https://bokiedb.onrender.com/products/?name_like=${search}`).then((postdata) => {
       const reversedData = postdata.data;
       
       setItem(reversedData);
@@ -25,7 +25,7 @@ export default function Search() {
 
     const searcher = (e) =>{
 
-      axios.get(`http://localhost:8000/products/?name_like=${search}`).then((postdata) => {
+      axios.get(`https://bokiedb.onrender.com/products/?name_like=${search}`).then((postdata) => {
       const reversedData = postdata.data;
       
       setItem(reversedData);
@@ -63,9 +63,6 @@ export default function Search() {
 
 
     </div>
-
-
-
 
     </div>
     <Footer/>

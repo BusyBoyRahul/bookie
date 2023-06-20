@@ -15,7 +15,7 @@ export default function Product(props) {
     const productId = searchParams.get('id');
     console.log('Product ID:', productId);
 
-    axios.get(`http://localhost:8000/products/${productId}`).then(response => {
+    axios.get(`https://bokiedb.onrender.com/products/${productId}`).then(response => {
       console.log(response.data);
       setData(response.data);
     }).catch(error => {
@@ -35,7 +35,7 @@ export default function Product(props) {
           const uid = user.uid;
           setUid(user.uid);
           console.log(uid);
-            axios.get(`http://localhost:8000/users?uid=${uid}`).then((response) => {
+            axios.get(`https://bokiedb.onrender.com/users?uid=${uid}`).then((response) => {
               const user = response.data;
               const wishlist = user[0].wishlist;
           console.log(wishlist);
@@ -66,7 +66,7 @@ export default function Product(props) {
         setIsHeartFilled(!isHeartFilled);
 
         if(listed === "yes"){
-          axios.get(`http://localhost:8000/users/?uid=${uid}`)
+          axios.get(`https://bokiedb.onrender.com/users/?uid=${uid}`)
   .then(response => {
     const user = response.data[0]; // Assuming there is only one user returned
     const wishlist = user.wishlist;
@@ -80,7 +80,7 @@ console.log(productIndex);
       wishlist.splice(productIndex, 1);
       console.log(user);
       // Update the user's data on the server
-      axios.put(`http://localhost:8000/users/?uid=${uid}`, user)
+      axios.put(`https://bokiedb.onrender.com/users/?uid=${uid}`, user)
         .then(response => {
           console.log('Product removed from wishlist successfully!');
         })
@@ -98,7 +98,7 @@ console.log(productIndex);
         }else{
 
 
-          axios.get(`http://localhost:8000/users?uid=${uid}`)
+          axios.get(`https://bokiedb.onrender.com/users?uid=${uid}`)
   .then(response => {
     console.log(response.data);
     const user = response.data;
@@ -121,7 +121,7 @@ console.log(productIndex);
 console.log(updatedWishlist);
 console.log(user);
     // update wishlist
-    axios.put(`http://localhost:8000/users/?uid=${uid}`, user[0])
+    axios.put(`https://bokiedb.onrender.com/users/?uid=${uid}`, user[0])
       .then(response => {
         console.log('Product added to wishlist successfully!');
       })

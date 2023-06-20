@@ -24,7 +24,7 @@ useEffect(()=>{
       // https://firebase.google.com/docs/reference/js/auth.user
       
       console.log(user.uid);
-      navigate("/");
+      navigate('/');
       // ...
     } else {
       // User is signed out
@@ -62,7 +62,7 @@ useEffect(()=>{
       });
 
       axios
-      .post("http://localhost:8000/users", {
+      .post("https://bokiedb.onrender.com/users", {
        // name: name,
         mail: mail,
         uid: user.uid

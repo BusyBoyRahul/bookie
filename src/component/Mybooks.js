@@ -19,7 +19,7 @@ export default function Mybooks() {
             if (user) {
               const uid = user.uid;
               console.log(uid);
-                axios.get(`http://localhost:8000/products?seller=${uid}`).then((response) => {
+                axios.get(`https://bokiedb.onrender.com/products?seller=${uid}`).then((response) => {
                     setData(response.data);
                     console.log(data, uid);
                     console.log(response);
